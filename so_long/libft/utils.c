@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+#include "../headers/libft.h"
 
 int	ft_count_c(char *s, char c)
 /* will count appearances of c inside s and return them as integer */
@@ -33,7 +32,7 @@ int	ft_count_c(char *s, char c)
 
 void	exit_error(void)
 {
-	printf("Error\nwrong map dimensions\n");
+	ft_printf("Error\nwrong map dimensions\n");
 	exit(EXIT_FAILURE);
 }
 

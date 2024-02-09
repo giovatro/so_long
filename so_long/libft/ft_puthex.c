@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../headers/libft.h"
 
 void	ft_puthex(unsigned long x, int *len, char s)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../headers/libft.h"
 
 void	ft_putuint(unsigned int u, int *len)
 {

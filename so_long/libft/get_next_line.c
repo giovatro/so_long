@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../headers/libft.h"
 
 void	*ft_calloc_gnl(size_t nelem, size_t elsize)
 /*
