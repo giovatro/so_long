@@ -33,7 +33,7 @@
 # define LEFT -1
 # define RIGHT 1
 
-/* storing different images */
+/* storing player and background images */
 
 typedef struct s_img
 {
@@ -55,7 +55,7 @@ typedef struct s_map
 	int		coins;
 }				t_map;
 
-/* handling programms data between functions */
+/* handling programs data between functions */
 
 typedef struct s_data
 {
