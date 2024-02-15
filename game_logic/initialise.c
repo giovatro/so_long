@@ -18,6 +18,12 @@ static void	ft_init_two(t_data *data)
 	int		img_width;
 	int		img_height;
 
+	relative_path = "./textures/player_left.xpm";
+	data->img->player_left = mlx_xpm_file_to_image(data->mlx, relative_path,
+			&img_width, &img_height);
+	relative_path = "./textures/player_down.xpm";
+	data->img->player_down = mlx_xpm_file_to_image(data->mlx, relative_path,
+			&img_width, &img_height);
 	relative_path = "./textures/player_right.xpm";
 	data->img->player_right = mlx_xpm_file_to_image(data->mlx, relative_path,
 			&img_width, &img_height);
@@ -44,13 +50,9 @@ void	ft_init(t_data *data, t_map *map)
 	relative_path = "textures/player_up.xpm";
 	data->img->player_up = mlx_xpm_file_to_image(data->mlx, relative_path,
 			&img_width, &img_height);
-	relative_path = "./textures/player_left.xpm";
-	data->img->player_left = mlx_xpm_file_to_image(data->mlx, relative_path,
-			&img_width, &img_height);
-	relative_path = "./textures/player_down.xpm";
-	data->img->player_down = mlx_xpm_file_to_image(data->mlx, relative_path,
-			&img_width, &img_height);
 	ft_init_two(data);
 	data->counter = 0;
 	data->collected = 0;
+	data->exit_fill_counter = 0;
+	data->collectible_fill_counter = 0;
 }

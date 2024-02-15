@@ -50,25 +50,24 @@ static void	ft_check_walls(t_data *data)
 static void	ft_check_content(t_data *data)
 {
 	int	y;
-	int	exit;
 	int	player;
 
-	exit = 0;
 	player = 0;
+	data->map->exit = 0;
 	data->map->coins = 0;
 	y = 0;
 	while (data->map->map && data->map->map[y])
 	{
-		exit += ft_count_c(data->map->map[y], 'E');
+		data->map->exit += ft_count_c(data->map->map[y], 'E');
 		player += ft_count_c(data->map->map[y], 'P');
 		data->map->coins += ft_count_c(data->map->map[y], 'C');
 		y++;
 	}
 	if (player != 1)
 		ft_map_error("Error\nno player found\n");
-	if (exit != 1)
+	if (data->map->exit != 1)
 		ft_map_error("Error\nMap must have 1 exit\n");
-	if (exit == 0)
+	if (data->map->exit == 0)
 		ft_map_error("Error\nno exit found\n");
 	if (data->map->coins == 0)
 		ft_map_error("Error\nno collectibles found\n");
@@ -83,7 +82,7 @@ static void	ft_input_error(int argc)
 	}
 }
 
-void	ft_parse_input(t_data *data, char **argv, int argc)
+void	ft_parse_input(t_data *data, t_map *map, char **argv, int argc)
 {
 	int		fd;
 	int		i;
@@ -109,4 +108,5 @@ void	ft_parse_input(t_data *data, char **argv, int argc)
 	}
 	ft_check_content(data);
 	ft_check_walls(data);
+	check_e_c_counter(data, map);
 }

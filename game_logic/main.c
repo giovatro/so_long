@@ -41,7 +41,7 @@ int	main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	ft_init(&data, &map);
-	ft_parse_input(&data, argv, argc);
+	ft_parse_input(&data, &map, argv, argc);
 	data.mlx = mlx_init();
 	if (!data.mlx)
 	{
