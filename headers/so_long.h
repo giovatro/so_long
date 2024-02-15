@@ -49,9 +49,11 @@ typedef struct s_img
 typedef struct s_map
 {
 	char	**map;
+	char	**map_fill;
 	void	*object;
 	int		x;
 	int		y;
+	int		exit;
 	int		coins;
 }				t_map;
 
@@ -67,6 +69,8 @@ typedef struct s_data
 	int		p_y;
 	int		counter;
 	int		collected;
+	int		collectible_fill_counter;
+	int		exit_fill_counter;
 	t_map	*map;
 	t_img	*img;
 }				t_data;
@@ -79,10 +83,12 @@ void	ft_create_map(t_data *data);
 void	ft_put_object(t_data *data, char *relative_path);
 void	ft_put_player(t_data *data);
 void	ft_put_background(t_data *data);
-void	ft_parse_input(t_data *data, char **argv, int argc);
+void	ft_parse_input(t_data *data, t_map *map, char **argv, int argc);
 int		ft_mouse_hook(int mousecode, t_data *data);
 void	ft_move(t_data *data, char position, int direction);
 int		ft_exit(t_data *data);
 void	ft_init(t_data *data, t_map *map);
+void	check_e_c_counter(t_data *data, t_map *map);
+char	**ft_tabcpy(char **in, char **out);
 
 #endif
